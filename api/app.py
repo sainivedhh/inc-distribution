@@ -41,3 +41,12 @@ async def validation_exception_handler(request, exc: RequestValidationError):
 # Include Routers
 app.include_router(health_router, prefix="")
 app.include_router(health_router, prefix="/api/v1")
+
+import connectors
+from api.v1.connector_routes import router as connector_router
+from api.v1.destinations import router as destinations_router
+from api.v1.job_routes import router as job_router
+
+app.include_router(connector_router)
+app.include_router(destinations_router)
+app.include_router(job_router)
