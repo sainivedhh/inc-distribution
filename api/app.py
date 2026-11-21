@@ -24,6 +24,19 @@ app = FastAPI(
 app.add_middleware(CorrelationIdMiddleware)
 
 
+@app.get("/", tags=["Health"])
+async def root():
+    """Service landing endpoint for deployment smoke checks."""
+    return {
+        "service": "IncuBrix Distribution Connector Service",
+        "status": "ok",
+        "version": "1.0.0",
+        "docs": "/docs",
+        "health": "/health",
+        "readiness": "/ready",
+    }
+
+
 # Validation Error Handler matching IncuBrix format
 @app.exception_handler(RequestValidationError)
 async def validation_exception_handler(request, exc: RequestValidationError):
