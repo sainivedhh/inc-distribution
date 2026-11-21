@@ -1,0 +1,31 @@
+{
+  "input": "input_04_assisted_pack.json",
+  "status_code": 200,
+  "response": {
+    "files": [],
+    "caption": "Founder Stories 2026\n\nLessons learned building bootstrapping SaaS products.",
+    "deep_link": "https://indiehackers.com",
+    "checklist": [
+      {
+        "rule": "frequency_cap",
+        "checked": false,
+        "instruction": "Verify no posts from IncuBrix in 1 per 7 days"
+      },
+      {
+        "rule": "self_promotion",
+        "checked": false,
+        "instruction": "Ensure non-promotional discussion tone"
+      },
+      {
+        "rule": "ai_disclosure",
+        "checked": false,
+        "instruction": "Confirm AI disclosure is visible in post body"
+      },
+      {
+        "rule": "manual_submit",
+        "checked": false,
+        "instruction": "Open deep link: https://indiehackers.com and submit manually"
+      }
+    ]
+  }
+}

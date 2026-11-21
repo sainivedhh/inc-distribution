@@ -1,0 +1,25 @@
+{
+  "connector_key": "devto",
+  "method": "publish",
+  "body": {
+    "rendition": {
+      "title": "Building Real-time Connectors",
+      "body": "Deep dive into Forem and webhooks architecture.",
+      "tags": [
+        "ai",
+        "saas"
+      ]
+    },
+    "destination": {
+      "name": "Dev.to Official",
+      "url": "https://dev.to",
+      "platform_key": "devto",
+      "surface": "article",
+      "connector_key": "devto"
+    },
+    "connection": {
+      "api_key": "mock_devto_key"
+    },
+    "idempotency_key": "batch_run_003"
+  }
+}

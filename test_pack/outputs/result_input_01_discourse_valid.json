@@ -1,0 +1,9 @@
+{
+  "input": "input_01_discourse_valid.json",
+  "status_code": 200,
+  "response": {
+    "platform_post_id": "disc_post_batch_ru",
+    "live_url": "https://forum.incubrix.test/t/topic-batch_ru/1",
+    "status": "published"
+  }
+}

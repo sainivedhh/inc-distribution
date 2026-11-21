@@ -1,0 +1,9 @@
+{
+  "input": "input_03_devto_article.json",
+  "status_code": 200,
+  "response": {
+    "platform_post_id": "devto_batch_ru",
+    "live_url": "https://dev.to/article/test-batch_ru",
+    "status": "published"
+  }
+}

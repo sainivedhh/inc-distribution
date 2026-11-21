@@ -1,0 +1,24 @@
+{
+  "destination_name": "Official Mrss Destination",
+  "connector_key": "mrss",
+  "started_at": "2026-11-21T03:42:10.343876",
+  "steps": [
+    {
+      "step": "publish",
+      "platform_post_id": "mrss_cert_179",
+      "live_url": "https://feeds.incubrix.com/mrss/dest_cert_mrss#mrss_cert_179",
+      "status": "published"
+    },
+    {
+      "step": "get_status",
+      "status": "published",
+      "live_url": null
+    },
+    {
+      "step": "delete",
+      "deleted": true
+    }
+  ],
+  "duration_seconds": 0.0,
+  "result": "passed"
+}

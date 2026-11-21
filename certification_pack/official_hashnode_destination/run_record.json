@@ -1,0 +1,24 @@
+{
+  "destination_name": "Official Hashnode Destination",
+  "connector_key": "hashnode",
+  "started_at": "2026-11-21T03:42:10.338851",
+  "steps": [
+    {
+      "step": "publish",
+      "platform_post_id": "hn_cert_179",
+      "live_url": "https://blog.hashnode.dev/post-cert_179",
+      "status": "published"
+    },
+    {
+      "step": "get_status",
+      "status": "published",
+      "live_url": "https://blog.hashnode.dev/hn_cert_179"
+    },
+    {
+      "step": "delete",
+      "deleted": true
+    }
+  ],
+  "duration_seconds": 0.0,
+  "result": "passed"
+}

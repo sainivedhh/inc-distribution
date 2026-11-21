@@ -1,0 +1,17 @@
+{
+  "connector_key": "discourse",
+  "method": "validate",
+  "body": {
+    "rendition": {
+      "title": "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+      "body": "Overly long title"
+    },
+    "destination": {
+      "name": "Discourse Dev",
+      "url": "https://forum.incubrix.test",
+      "platform_key": "discourse",
+      "surface": "topic",
+      "connector_key": "discourse"
+    }
+  }
+}

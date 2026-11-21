@@ -1,0 +1,15 @@
+{
+  "input": "input_02_discourse_violation.json",
+  "status_code": 200,
+  "response": {
+    "ok": false,
+    "violations": [
+      {
+        "field": "title",
+        "message": "Title length (300) exceeds maximum of 255 chars",
+        "rule": "title_max_chars",
+        "severity": "error"
+      }
+    ]
+  }
+}

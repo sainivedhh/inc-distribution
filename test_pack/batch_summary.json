@@ -1,0 +1,78 @@
+{
+  "total": 5,
+  "results": [
+    {
+      "input": "input_01_discourse_valid.json",
+      "status_code": 200,
+      "response": {
+        "platform_post_id": "disc_post_batch_ru",
+        "live_url": "https://forum.incubrix.test/t/topic-batch_ru/1",
+        "status": "published"
+      }
+    },
+    {
+      "input": "input_02_discourse_violation.json",
+      "status_code": 200,
+      "response": {
+        "ok": false,
+        "violations": [
+          {
+            "field": "title",
+            "message": "Title length (300) exceeds maximum of 255 chars",
+            "rule": "title_max_chars",
+            "severity": "error"
+          }
+        ]
+      }
+    },
+    {
+      "input": "input_03_devto_article.json",
+      "status_code": 200,
+      "response": {
+        "platform_post_id": "devto_batch_ru",
+        "live_url": "https://dev.to/article/test-batch_ru",
+        "status": "published"
+      }
+    },
+    {
+      "input": "input_04_assisted_pack.json",
+      "status_code": 200,
+      "response": {
+        "files": [],
+        "caption": "Founder Stories 2026\n\nLessons learned building bootstrapping SaaS products.",
+        "deep_link": "https://indiehackers.com",
+        "checklist": [
+          {
+            "rule": "frequency_cap",
+            "checked": false,
+            "instruction": "Verify no posts from IncuBrix in 1 per 7 days"
+          },
+          {
+            "rule": "self_promotion",
+            "checked": false,
+            "instruction": "Ensure non-promotional discussion tone"
+          },
+          {
+            "rule": "ai_disclosure",
+            "checked": false,
+            "instruction": "Confirm AI disclosure is visible in post body"
+          },
+          {
+            "rule": "manual_submit",
+            "checked": false,
+            "instruction": "Open deep link: https://indiehackers.com and submit manually"
+          }
+        ]
+      }
+    },
+    {
+      "input": "input_05_webhook_hmac.json",
+      "status_code": 200,
+      "response": {
+        "platform_post_id": "wh_batch_ru",
+        "live_url": "https://partner.com/posts/wh_batch_ru",
+        "status": "published"
+      }
+    }
+  ]
+}

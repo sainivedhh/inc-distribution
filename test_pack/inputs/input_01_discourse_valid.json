@@ -1,0 +1,23 @@
+{
+  "connector_key": "discourse",
+  "method": "publish",
+  "body": {
+    "rendition": {
+      "title": "AI Community Architecture",
+      "body": "Detailed guide on scalable distribution networks.",
+      "language": "en"
+    },
+    "destination": {
+      "name": "Discourse Dev",
+      "url": "https://forum.incubrix.test",
+      "platform_key": "discourse",
+      "surface": "topic",
+      "connector_key": "discourse"
+    },
+    "connection": {
+      "api_key": "mock_key",
+      "username": "incubrix"
+    },
+    "idempotency_key": "batch_run_001"
+  }
+}

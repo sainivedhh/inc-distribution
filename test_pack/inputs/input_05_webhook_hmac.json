@@ -1,0 +1,21 @@
+{
+  "connector_key": "webhook_hmac",
+  "method": "publish",
+  "body": {
+    "rendition": {
+      "title": "Syndicated Press Release",
+      "body": "Product update for syndicate distribution network."
+    },
+    "destination": {
+      "name": "Partner Network",
+      "url": "https://partner.com/api",
+      "platform_key": "webhook_hmac",
+      "surface": "webhook",
+      "connector_key": "webhook_hmac"
+    },
+    "connection": {
+      "secret": "partner-secret-123456"
+    },
+    "idempotency_key": "batch_run_005"
+  }
+}

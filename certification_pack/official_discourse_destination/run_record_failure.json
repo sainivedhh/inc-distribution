@@ -1,0 +1,16 @@
+{
+  "destination_name": "Official Discourse Destination",
+  "connector_key": "discourse",
+  "started_at": "2026-11-21T03:39:05.339430",
+  "steps": [
+    {
+      "step": "publish",
+      "platform_post_id": "disc_post_cert_179",
+      "live_url": "https://discourse.incubrix.test/t/topic-cert_179/1",
+      "status": "published"
+    }
+  ],
+  "duration_seconds": 3.78,
+  "result": "failed",
+  "error": "Discourse connection timed out or failed to reach host."
+}

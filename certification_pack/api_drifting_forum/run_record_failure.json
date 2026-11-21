@@ -1,0 +1,9 @@
+{
+  "destination_name": "API Drifting Forum",
+  "connector_key": "discourse",
+  "started_at": "2026-11-21T03:42:36.386931",
+  "steps": [],
+  "duration_seconds": 0.0,
+  "result": "failed",
+  "error": "Schema drift: Platform dropped required response field 'id'"
+}

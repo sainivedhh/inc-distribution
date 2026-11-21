@@ -1,0 +1,16 @@
+{
+  "destination_name": "Official Lemmy Destination",
+  "connector_key": "lemmy",
+  "started_at": "2026-11-21T03:39:38.417232",
+  "steps": [
+    {
+      "step": "publish",
+      "platform_post_id": "lemmy_cert_179",
+      "live_url": "https://lemmy.incubrix.test/post/cert_179",
+      "status": "published"
+    }
+  ],
+  "duration_seconds": 3.78,
+  "result": "failed",
+  "error": "All connection attempts failed"
+}

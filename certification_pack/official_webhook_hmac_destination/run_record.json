@@ -1,0 +1,24 @@
+{
+  "destination_name": "Official Webhook_hmac Destination",
+  "connector_key": "webhook_hmac",
+  "started_at": "2026-11-21T03:42:03.331837",
+  "steps": [
+    {
+      "step": "publish",
+      "platform_post_id": "wh_cert_179",
+      "live_url": "https://partner.com/posts/wh_cert_179",
+      "status": "published"
+    },
+    {
+      "step": "get_status",
+      "status": "published",
+      "live_url": "https://partner.com/posts/wh_cert_179"
+    },
+    {
+      "step": "delete",
+      "deleted": true
+    }
+  ],
+  "duration_seconds": 7.0,
+  "result": "passed"
+}

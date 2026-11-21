@@ -1,0 +1,581 @@
+{
+  "mean_precision_at_10": 0.9656249999999997,
+  "queries": [
+    {
+      "content_id": "query_1",
+      "topic": "saas",
+      "title": "Advanced Insights on SAAS Distribution Systems #1",
+      "top_10_recommendations": [
+        "SaaS Growth Slack",
+        "Discourse Meta",
+        "Hashnode Engineering",
+        "Indie Hackers Community",
+        "AI Practitioners #8",
+        "SaaS Founders Hub #10",
+        "Bootstrappers Forum #12",
+        "Growth Engineers Lab #14",
+        "AI Practitioners #16",
+        "SaaS Founders Hub #18"
+      ],
+      "precision_at_10": 1.0
+    },
+    {
+      "content_id": "query_2",
+      "topic": "video",
+      "title": "Advanced Insights on VIDEO Distribution Systems #2",
+      "top_10_recommendations": [
+        "SaaS Growth Slack",
+        "Video Creators Network #9",
+        "B2B Marketing Guild #11",
+        "Developer Tools Digest #13",
+        "Cloud Native Guild #15",
+        "Video Creators Network #17",
+        "B2B Marketing Guild #19",
+        "Developer Tools Digest #21",
+        "Cloud Native Guild #23",
+        "Video Creators Network #25"
+      ],
+      "precision_at_10": 0.9
+    },
+    {
+      "content_id": "query_3",
+      "topic": "ai",
+      "title": "Advanced Insights on AI Distribution Systems #3",
+      "top_10_recommendations": [
+        "Discourse Meta",
+        "Dev.to Official",
+        "Hashnode Engineering",
+        "AI Practitioners #8",
+        "SaaS Founders Hub #10",
+        "Bootstrappers Forum #12",
+        "Growth Engineers Lab #14",
+        "AI Practitioners #16",
+        "SaaS Founders Hub #18",
+        "Bootstrappers Forum #20"
+      ],
+      "precision_at_10": 1.0
+    },
+    {
+      "content_id": "query_4",
+      "topic": "saas",
+      "title": "Advanced Insights on SAAS Distribution Systems #4",
+      "top_10_recommendations": [
+        "SaaS Growth Slack",
+        "Discourse Meta",
+        "Hashnode Engineering",
+        "Indie Hackers Community",
+        "AI Practitioners #8",
+        "SaaS Founders Hub #10",
+        "Bootstrappers Forum #12",
+        "Growth Engineers Lab #14",
+        "AI Practitioners #16",
+        "SaaS Founders Hub #18"
+      ],
+      "precision_at_10": 1.0
+    },
+    {
+      "content_id": "query_5",
+      "topic": "video",
+      "title": "Advanced Insights on VIDEO Distribution Systems #5",
+      "top_10_recommendations": [
+        "SaaS Growth Slack",
+        "Video Creators Network #9",
+        "B2B Marketing Guild #11",
+        "Developer Tools Digest #13",
+        "Cloud Native Guild #15",
+        "Video Creators Network #17",
+        "B2B Marketing Guild #19",
+        "Developer Tools Digest #21",
+        "Cloud Native Guild #23",
+        "Video Creators Network #25"
+      ],
+      "precision_at_10": 0.9
+    },
+    {
+      "content_id": "query_6",
+      "topic": "ai",
+      "title": "Advanced Insights on AI Distribution Systems #6",
+      "top_10_recommendations": [
+        "Discourse Meta",
+        "Dev.to Official",
+        "Hashnode Engineering",
+        "AI Practitioners #8",
+        "SaaS Founders Hub #10",
+        "Bootstrappers Forum #12",
+        "Growth Engineers Lab #14",
+        "AI Practitioners #16",
+        "SaaS Founders Hub #18",
+        "Bootstrappers Forum #20"
+      ],
+      "precision_at_10": 1.0
+    },
+    {
+      "content_id": "query_7",
+      "topic": "saas",
+      "title": "Advanced Insights on SAAS Distribution Systems #7",
+      "top_10_recommendations": [
+        "SaaS Growth Slack",
+        "Discourse Meta",
+        "Hashnode Engineering",
+        "Indie Hackers Community",
+        "AI Practitioners #8",
+        "SaaS Founders Hub #10",
+        "Bootstrappers Forum #12",
+        "Growth Engineers Lab #14",
+        "AI Practitioners #16",
+        "SaaS Founders Hub #18"
+      ],
+      "precision_at_10": 1.0
+    },
+    {
+      "content_id": "query_8",
+      "topic": "video",
+      "title": "Advanced Insights on VIDEO Distribution Systems #8",
+      "top_10_recommendations": [
+        "SaaS Growth Slack",
+        "Video Creators Network #9",
+        "B2B Marketing Guild #11",
+        "Developer Tools Digest #13",
+        "Cloud Native Guild #15",
+        "Video Creators Network #17",
+        "B2B Marketing Guild #19",
+        "Developer Tools Digest #21",
+        "Cloud Native Guild #23",
+        "Video Creators Network #25"
+      ],
+      "precision_at_10": 0.9
+    },
+    {
+      "content_id": "query_9",
+      "topic": "ai",
+      "title": "Advanced Insights on AI Distribution Systems #9",
+      "top_10_recommendations": [
+        "Discourse Meta",
+        "Dev.to Official",
+        "Hashnode Engineering",
+        "AI Practitioners #8",
+        "SaaS Founders Hub #10",
+        "Bootstrappers Forum #12",
+        "Growth Engineers Lab #14",
+        "AI Practitioners #16",
+        "SaaS Founders Hub #18",
+        "Bootstrappers Forum #20"
+      ],
+      "precision_at_10": 1.0
+    },
+    {
+      "content_id": "query_10",
+      "topic": "saas",
+      "title": "Advanced Insights on SAAS Distribution Systems #10",
+      "top_10_recommendations": [
+        "SaaS Growth Slack",
+        "Discourse Meta",
+        "Hashnode Engineering",
+        "Indie Hackers Community",
+        "AI Practitioners #8",
+        "SaaS Founders Hub #10",
+        "Bootstrappers Forum #12",
+        "Growth Engineers Lab #14",
+        "AI Practitioners #16",
+        "SaaS Founders Hub #18"
+      ],
+      "precision_at_10": 1.0
+    },
+    {
+      "content_id": "query_11",
+      "topic": "video",
+      "title": "Advanced Insights on VIDEO Distribution Systems #11",
+      "top_10_recommendations": [
+        "SaaS Growth Slack",
+        "Video Creators Network #9",
+        "B2B Marketing Guild #11",
+        "Developer Tools Digest #13",
+        "Cloud Native Guild #15",
+        "Video Creators Network #17",
+        "B2B Marketing Guild #19",
+        "Developer Tools Digest #21",
+        "Cloud Native Guild #23",
+        "Video Creators Network #25"
+      ],
+      "precision_at_10": 0.9
+    },
+    {
+      "content_id": "query_12",
+      "topic": "ai",
+      "title": "Advanced Insights on AI Distribution Systems #12",
+      "top_10_recommendations": [
+        "Discourse Meta",
+        "Dev.to Official",
+        "Hashnode Engineering",
+        "AI Practitioners #8",
+        "SaaS Founders Hub #10",
+        "Bootstrappers Forum #12",
+        "Growth Engineers Lab #14",
+        "AI Practitioners #16",
+        "SaaS Founders Hub #18",
+        "Bootstrappers Forum #20"
+      ],
+      "precision_at_10": 1.0
+    },
+    {
+      "content_id": "query_13",
+      "topic": "saas",
+      "title": "Advanced Insights on SAAS Distribution Systems #13",
+      "top_10_recommendations": [
+        "SaaS Growth Slack",
+        "Discourse Meta",
+        "Hashnode Engineering",
+        "Indie Hackers Community",
+        "AI Practitioners #8",
+        "SaaS Founders Hub #10",
+        "Bootstrappers Forum #12",
+        "Growth Engineers Lab #14",
+        "AI Practitioners #16",
+        "SaaS Founders Hub #18"
+      ],
+      "precision_at_10": 1.0
+    },
+    {
+      "content_id": "query_14",
+      "topic": "video",
+      "title": "Advanced Insights on VIDEO Distribution Systems #14",
+      "top_10_recommendations": [
+        "SaaS Growth Slack",
+        "Video Creators Network #9",
+        "B2B Marketing Guild #11",
+        "Developer Tools Digest #13",
+        "Cloud Native Guild #15",
+        "Video Creators Network #17",
+        "B2B Marketing Guild #19",
+        "Developer Tools Digest #21",
+        "Cloud Native Guild #23",
+        "Video Creators Network #25"
+      ],
+      "precision_at_10": 0.9
+    },
+    {
+      "content_id": "query_15",
+      "topic": "ai",
+      "title": "Advanced Insights on AI Distribution Systems #15",
+      "top_10_recommendations": [
+        "Discourse Meta",
+        "Dev.to Official",
+        "Hashnode Engineering",
+        "AI Practitioners #8",
+        "SaaS Founders Hub #10",
+        "Bootstrappers Forum #12",
+        "Growth Engineers Lab #14",
+        "AI Practitioners #16",
+        "SaaS Founders Hub #18",
+        "Bootstrappers Forum #20"
+      ],
+      "precision_at_10": 1.0
+    },
+    {
+      "content_id": "query_16",
+      "topic": "saas",
+      "title": "Advanced Insights on SAAS Distribution Systems #16",
+      "top_10_recommendations": [
+        "SaaS Growth Slack",
+        "Discourse Meta",
+        "Hashnode Engineering",
+        "Indie Hackers Community",
+        "AI Practitioners #8",
+        "SaaS Founders Hub #10",
+        "Bootstrappers Forum #12",
+        "Growth Engineers Lab #14",
+        "AI Practitioners #16",
+        "SaaS Founders Hub #18"
+      ],
+      "precision_at_10": 1.0
+    },
+    {
+      "content_id": "query_17",
+      "topic": "video",
+      "title": "Advanced Insights on VIDEO Distribution Systems #17",
+      "top_10_recommendations": [
+        "SaaS Growth Slack",
+        "Video Creators Network #9",
+        "B2B Marketing Guild #11",
+        "Developer Tools Digest #13",
+        "Cloud Native Guild #15",
+        "Video Creators Network #17",
+        "B2B Marketing Guild #19",
+        "Developer Tools Digest #21",
+        "Cloud Native Guild #23",
+        "Video Creators Network #25"
+      ],
+      "precision_at_10": 0.9
+    },
+    {
+      "content_id": "query_18",
+      "topic": "ai",
+      "title": "Advanced Insights on AI Distribution Systems #18",
+      "top_10_recommendations": [
+        "Discourse Meta",
+        "Dev.to Official",
+        "Hashnode Engineering",
+        "AI Practitioners #8",
+        "SaaS Founders Hub #10",
+        "Bootstrappers Forum #12",
+        "Growth Engineers Lab #14",
+        "AI Practitioners #16",
+        "SaaS Founders Hub #18",
+        "Bootstrappers Forum #20"
+      ],
+      "precision_at_10": 1.0
+    },
+    {
+      "content_id": "query_19",
+      "topic": "saas",
+      "title": "Advanced Insights on SAAS Distribution Systems #19",
+      "top_10_recommendations": [
+        "SaaS Growth Slack",
+        "Discourse Meta",
+        "Hashnode Engineering",
+        "Indie Hackers Community",
+        "AI Practitioners #8",
+        "SaaS Founders Hub #10",
+        "Bootstrappers Forum #12",
+        "Growth Engineers Lab #14",
+        "AI Practitioners #16",
+        "SaaS Founders Hub #18"
+      ],
+      "precision_at_10": 1.0
+    },
+    {
+      "content_id": "query_20",
+      "topic": "video",
+      "title": "Advanced Insights on VIDEO Distribution Systems #20",
+      "top_10_recommendations": [
+        "SaaS Growth Slack",
+        "Video Creators Network #9",
+        "B2B Marketing Guild #11",
+        "Developer Tools Digest #13",
+        "Cloud Native Guild #15",
+        "Video Creators Network #17",
+        "B2B Marketing Guild #19",
+        "Developer Tools Digest #21",
+        "Cloud Native Guild #23",
+        "Video Creators Network #25"
+      ],
+      "precision_at_10": 0.9
+    },
+    {
+      "content_id": "query_21",
+      "topic": "ai",
+      "title": "Advanced Insights on AI Distribution Systems #21",
+      "top_10_recommendations": [
+        "Discourse Meta",
+        "Dev.to Official",
+        "Hashnode Engineering",
+        "AI Practitioners #8",
+        "SaaS Founders Hub #10",
+        "Bootstrappers Forum #12",
+        "Growth Engineers Lab #14",
+        "AI Practitioners #16",
+        "SaaS Founders Hub #18",
+        "Bootstrappers Forum #20"
+      ],
+      "precision_at_10": 1.0
+    },
+    {
+      "content_id": "query_22",
+      "topic": "saas",
+      "title": "Advanced Insights on SAAS Distribution Systems #22",
+      "top_10_recommendations": [
+        "SaaS Growth Slack",
+        "Discourse Meta",
+        "Hashnode Engineering",
+        "Indie Hackers Community",
+        "AI Practitioners #8",
+        "SaaS Founders Hub #10",
+        "Bootstrappers Forum #12",
+        "Growth Engineers Lab #14",
+        "AI Practitioners #16",
+        "SaaS Founders Hub #18"
+      ],
+      "precision_at_10": 1.0
+    },
+    {
+      "content_id": "query_23",
+      "topic": "video",
+      "title": "Advanced Insights on VIDEO Distribution Systems #23",
+      "top_10_recommendations": [
+        "SaaS Growth Slack",
+        "Video Creators Network #9",
+        "B2B Marketing Guild #11",
+        "Developer Tools Digest #13",
+        "Cloud Native Guild #15",
+        "Video Creators Network #17",
+        "B2B Marketing Guild #19",
+        "Developer Tools Digest #21",
+        "Cloud Native Guild #23",
+        "Video Creators Network #25"
+      ],
+      "precision_at_10": 0.9
+    },
+    {
+      "content_id": "query_24",
+      "topic": "ai",
+      "title": "Advanced Insights on AI Distribution Systems #24",
+      "top_10_recommendations": [
+        "Discourse Meta",
+        "Dev.to Official",
+        "Hashnode Engineering",
+        "AI Practitioners #8",
+        "SaaS Founders Hub #10",
+        "Bootstrappers Forum #12",
+        "Growth Engineers Lab #14",
+        "AI Practitioners #16",
+        "SaaS Founders Hub #18",
+        "Bootstrappers Forum #20"
+      ],
+      "precision_at_10": 1.0
+    },
+    {
+      "content_id": "query_25",
+      "topic": "saas",
+      "title": "Advanced Insights on SAAS Distribution Systems #25",
+      "top_10_recommendations": [
+        "SaaS Growth Slack",
+        "Discourse Meta",
+        "Hashnode Engineering",
+        "Indie Hackers Community",
+        "AI Practitioners #8",
+        "SaaS Founders Hub #10",
+        "Bootstrappers Forum #12",
+        "Growth Engineers Lab #14",
+        "AI Practitioners #16",
+        "SaaS Founders Hub #18"
+      ],
+      "precision_at_10": 1.0
+    },
+    {
+      "content_id": "query_26",
+      "topic": "video",
+      "title": "Advanced Insights on VIDEO Distribution Systems #26",
+      "top_10_recommendations": [
+        "SaaS Growth Slack",
+        "Video Creators Network #9",
+        "B2B Marketing Guild #11",
+        "Developer Tools Digest #13",
+        "Cloud Native Guild #15",
+        "Video Creators Network #17",
+        "B2B Marketing Guild #19",
+        "Developer Tools Digest #21",
+        "Cloud Native Guild #23",
+        "Video Creators Network #25"
+      ],
+      "precision_at_10": 0.9
+    },
+    {
+      "content_id": "query_27",
+      "topic": "ai",
+      "title": "Advanced Insights on AI Distribution Systems #27",
+      "top_10_recommendations": [
+        "Discourse Meta",
+        "Dev.to Official",
+        "Hashnode Engineering",
+        "AI Practitioners #8",
+        "SaaS Founders Hub #10",
+        "Bootstrappers Forum #12",
+        "Growth Engineers Lab #14",
+        "AI Practitioners #16",
+        "SaaS Founders Hub #18",
+        "Bootstrappers Forum #20"
+      ],
+      "precision_at_10": 1.0
+    },
+    {
+      "content_id": "query_28",
+      "topic": "saas",
+      "title": "Advanced Insights on SAAS Distribution Systems #28",
+      "top_10_recommendations": [
+        "SaaS Growth Slack",
+        "Discourse Meta",
+        "Hashnode Engineering",
+        "Indie Hackers Community",
+        "AI Practitioners #8",
+        "SaaS Founders Hub #10",
+        "Bootstrappers Forum #12",
+        "Growth Engineers Lab #14",
+        "AI Practitioners #16",
+        "SaaS Founders Hub #18"
+      ],
+      "precision_at_10": 1.0
+    },
+    {
+      "content_id": "query_29",
+      "topic": "video",
+      "title": "Advanced Insights on VIDEO Distribution Systems #29",
+      "top_10_recommendations": [
+        "SaaS Growth Slack",
+        "Video Creators Network #9",
+        "B2B Marketing Guild #11",
+        "Developer Tools Digest #13",
+        "Cloud Native Guild #15",
+        "Video Creators Network #17",
+        "B2B Marketing Guild #19",
+        "Developer Tools Digest #21",
+        "Cloud Native Guild #23",
+        "Video Creators Network #25"
+      ],
+      "precision_at_10": 0.9
+    },
+    {
+      "content_id": "query_30",
+      "topic": "ai",
+      "title": "Advanced Insights on AI Distribution Systems #30",
+      "top_10_recommendations": [
+        "Discourse Meta",
+        "Dev.to Official",
+        "Hashnode Engineering",
+        "AI Practitioners #8",
+        "SaaS Founders Hub #10",
+        "Bootstrappers Forum #12",
+        "Growth Engineers Lab #14",
+        "AI Practitioners #16",
+        "SaaS Founders Hub #18",
+        "Bootstrappers Forum #20"
+      ],
+      "precision_at_10": 1.0
+    },
+    {
+      "content_id": "query_31",
+      "topic": "saas",
+      "title": "Advanced Insights on SAAS Distribution Systems #31",
+      "top_10_recommendations": [
+        "SaaS Growth Slack",
+        "Discourse Meta",
+        "Hashnode Engineering",
+        "Indie Hackers Community",
+        "AI Practitioners #8",
+        "SaaS Founders Hub #10",
+        "Bootstrappers Forum #12",
+        "Growth Engineers Lab #14",
+        "AI Practitioners #16",
+        "SaaS Founders Hub #18"
+      ],
+      "precision_at_10": 1.0
+    },
+    {
+      "content_id": "query_32",
+      "topic": "video",
+      "title": "Advanced Insights on VIDEO Distribution Systems #32",
+      "top_10_recommendations": [
+        "SaaS Growth Slack",
+        "Video Creators Network #9",
+        "B2B Marketing Guild #11",
+        "Developer Tools Digest #13",
+        "Cloud Native Guild #15",
+        "Video Creators Network #17",
+        "B2B Marketing Guild #19",
+        "Developer Tools Digest #21",
+        "Cloud Native Guild #23",
+        "Video Creators Network #25"
+      ],
+      "precision_at_10": 0.9
+    }
+  ]
+}

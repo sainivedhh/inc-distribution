@@ -1,0 +1,24 @@
+{
+  "destination_name": "Official Discourse Destination",
+  "connector_key": "discourse",
+  "started_at": "2026-11-21T03:42:03.311933",
+  "steps": [
+    {
+      "step": "publish",
+      "platform_post_id": "disc_post_cert_179",
+      "live_url": "https://discourse.incubrix.test/t/topic-cert_179/1",
+      "status": "published"
+    },
+    {
+      "step": "get_status",
+      "status": "published",
+      "live_url": "http://localhost:8080/discourse/t/disc_post_cert_179"
+    },
+    {
+      "step": "delete",
+      "deleted": true
+    }
+  ],
+  "duration_seconds": 0.0,
+  "result": "passed"
+}

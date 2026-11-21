@@ -1,0 +1,18 @@
+{
+  "connector_key": "assisted",
+  "method": "build_assist_pack",
+  "body": {
+    "rendition": {
+      "title": "Founder Stories 2026",
+      "body": "Lessons learned building bootstrapping SaaS products."
+    },
+    "destination": {
+      "name": "Indie Hackers Manual",
+      "url": "https://indiehackers.com",
+      "platform_key": "assisted",
+      "surface": "manual_pack",
+      "connector_key": "assisted",
+      "automation_allowed": false
+    }
+  }
+}

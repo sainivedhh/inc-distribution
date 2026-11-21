@@ -1,0 +1,9 @@
+{
+  "input": "input_05_webhook_hmac.json",
+  "status_code": 200,
+  "response": {
+    "platform_post_id": "wh_batch_ru",
+    "live_url": "https://partner.com/posts/wh_batch_ru",
+    "status": "published"
+  }
+}

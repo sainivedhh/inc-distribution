@@ -1,0 +1,9 @@
+{
+  "destination_name": "Official Slack Destination",
+  "connector_key": "slack",
+  "started_at": "2026-11-21T03:41:40.568884",
+  "steps": [],
+  "duration_seconds": 0.0,
+  "result": "failed",
+  "error": "name 'settings' is not defined"
+}

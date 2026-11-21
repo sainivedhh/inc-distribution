@@ -1,0 +1,9 @@
+{
+  "destination_name": "Official Devto Destination",
+  "connector_key": "devto",
+  "started_at": "2026-11-21T03:40:34.590297",
+  "steps": [],
+  "duration_seconds": 3.79,
+  "result": "failed",
+  "error": "Dev.to API error: All connection attempts failed"
+}

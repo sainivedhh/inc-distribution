@@ -1,0 +1,1298 @@
+openapi: 3.1.0
+info:
+  title: IncuBrix Distribution Connector Service
+  description: Long-Tail Destination Network connector service and publishing intelligence
+    engine.
+  version: 1.0.0
+paths:
+  /health:
+    get:
+      tags:
+      - Health
+      summary: Get Health
+      description: 'Liveness probe: verifies service process is running.'
+      operationId: get_health_health_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HealthResponse'
+  /ready:
+    get:
+      tags:
+      - Health
+      summary: Get Ready
+      description: 'Readiness probe: verifies dependencies (DB, Redis, S3).'
+      operationId: get_ready_ready_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReadyResponse'
+  /api/v1/health:
+    get:
+      tags:
+      - Health
+      summary: Get Health
+      description: 'Liveness probe: verifies service process is running.'
+      operationId: get_health_api_v1_health_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HealthResponse'
+  /api/v1/ready:
+    get:
+      tags:
+      - Health
+      summary: Get Ready
+      description: 'Readiness probe: verifies dependencies (DB, Redis, S3).'
+      operationId: get_ready_api_v1_ready_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReadyResponse'
+  /connector/v1/{connector_key}/validate:
+    post:
+      tags:
+      - Connectors Contract
+      summary: Validate Content
+      description: Validate rendition against destination and connection.
+      operationId: validate_content_connector_v1__connector_key__validate_post
+      parameters:
+      - name: connector_key
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Connector Key
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ValidateRequest'
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /connector/v1/{connector_key}/publish:
+    post:
+      tags:
+      - Connectors Contract
+      summary: Publish Content
+      description: Publish rendition to destination.
+      operationId: publish_content_connector_v1__connector_key__publish_post
+      parameters:
+      - name: connector_key
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Connector Key
+      - name: Idempotency-Key
+        in: header
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Idempotency-Key
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PublishRequest'
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PublishResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /connector/v1/{connector_key}/get_status:
+    post:
+      tags:
+      - Connectors Contract
+      summary: Get Post Status
+      description: Get status of an existing publication.
+      operationId: get_post_status_connector_v1__connector_key__get_status_post
+      parameters:
+      - name: connector_key
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Connector Key
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetStatusRequest'
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetStatusResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /connector/v1/{connector_key}/delete:
+    post:
+      tags:
+      - Connectors Contract
+      summary: Delete Post
+      description: Delete a post from the destination.
+      operationId: delete_post_connector_v1__connector_key__delete_post
+      parameters:
+      - name: connector_key
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Connector Key
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeleteRequest'
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeleteResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /connector/v1/{connector_key}/fetch_metrics:
+    post:
+      tags:
+      - Connectors Contract
+      summary: Fetch Metrics
+      description: Fetch post performance metrics.
+      operationId: fetch_metrics_connector_v1__connector_key__fetch_metrics_post
+      parameters:
+      - name: connector_key
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Connector Key
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FetchMetricsRequest'
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FetchMetricsResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /connector/v1/{connector_key}/refresh_auth:
+    post:
+      tags:
+      - Connectors Contract
+      summary: Refresh Auth
+      description: Refresh platform authentication tokens.
+      operationId: refresh_auth_connector_v1__connector_key__refresh_auth_post
+      parameters:
+      - name: connector_key
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Connector Key
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RefreshAuthRequest'
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RefreshAuthResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /connector/v1/{connector_key}/build_assist_pack:
+    post:
+      tags:
+      - Connectors Contract
+      summary: Build Assist Pack
+      description: Build assistance package for human posting (assisted tier).
+      operationId: build_assist_pack_connector_v1__connector_key__build_assist_pack_post
+      parameters:
+      - name: connector_key
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Connector Key
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BuildAssistPackRequest'
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BuildAssistPackResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /api/v1/destinations:
+    post:
+      tags:
+      - Destinations Catalogue
+      summary: Create Destination
+      description: Create a new destination row at runtime (zero-code configuration).
+      operationId: create_destination_api_v1_destinations_post
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DestinationCreate'
+      responses:
+        '201':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DestinationResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+    get:
+      tags:
+      - Destinations Catalogue
+      summary: List Destinations
+      operationId: list_destinations_api_v1_destinations_get
+      parameters:
+      - name: platform_key
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Platform Key
+      - name: level
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Level
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: integer
+          maximum: 500
+          minimum: 1
+          default: 50
+          title: Limit
+      - name: offset
+        in: query
+        required: false
+        schema:
+          type: integer
+          minimum: 0
+          default: 0
+          title: Offset
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DestinationResponse'
+                title: Response List Destinations Api V1 Destinations Get
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /api/v1/destinations/{destination_id}:
+    get:
+      tags:
+      - Destinations Catalogue
+      summary: Get Destination
+      operationId: get_destination_api_v1_destinations__destination_id__get
+      parameters:
+      - name: destination_id
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Destination Id
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DestinationResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /api/v1/jobs/{job_id}:
+    get:
+      tags:
+      - Background Jobs
+      summary: Get Job Status
+      description: 'Integration Standard point 3: GET /api/v1/jobs/{job_id}.'
+      operationId: get_job_status_api_v1_jobs__job_id__get
+      parameters:
+      - name: job_id
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Job Id
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobStatusResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+components:
+  schemas:
+    BuildAssistPackRequest:
+      properties:
+        rendition:
+          $ref: '#/components/schemas/ContentRendition'
+        destination:
+          $ref: '#/components/schemas/DestinationConfig'
+      type: object
+      required:
+      - rendition
+      - destination
+      title: BuildAssistPackRequest
+    BuildAssistPackResponse:
+      properties:
+        files:
+          items:
+            type: string
+          type: array
+          title: Files
+        caption:
+          type: string
+          title: Caption
+        deep_link:
+          type: string
+          title: Deep Link
+        checklist:
+          items:
+            $ref: '#/components/schemas/ChecklistItem'
+          type: array
+          title: Checklist
+      type: object
+      required:
+      - caption
+      - deep_link
+      title: BuildAssistPackResponse
+    ChecklistItem:
+      properties:
+        rule:
+          type: string
+          title: Rule
+        checked:
+          type: boolean
+          title: Checked
+          default: false
+        instruction:
+          type: string
+          title: Instruction
+      type: object
+      required:
+      - rule
+      - instruction
+      title: ChecklistItem
+    ConnectionAuth:
+      properties:
+        connection_id:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Connection Id
+        api_key:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Api Key
+        username:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Username
+        access_token:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Access Token
+        refresh_token:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Refresh Token
+        secret:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Secret
+        jwt_token:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Jwt Token
+        base_url:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Base Url
+        extra_params:
+          anyOf:
+          - type: object
+          - type: 'null'
+          title: Extra Params
+      type: object
+      title: ConnectionAuth
+    ContentRendition:
+      properties:
+        title:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Title
+        body:
+          type: string
+          title: Body
+        media:
+          anyOf:
+          - items:
+              $ref: '#/components/schemas/MediaItem'
+            type: array
+          - type: 'null'
+          title: Media
+        tags:
+          anyOf:
+          - items:
+              type: string
+            type: array
+          - type: 'null'
+          title: Tags
+        canonical_url:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Canonical Url
+        ai_generated:
+          type: boolean
+          title: Ai Generated
+          default: false
+        ai_disclosure_text:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Ai Disclosure Text
+        language:
+          type: string
+          title: Language
+          default: en
+      type: object
+      required:
+      - body
+      title: ContentRendition
+    DeleteRequest:
+      properties:
+        platform_post_id:
+          type: string
+          title: Platform Post Id
+        connection:
+          $ref: '#/components/schemas/ConnectionAuth'
+      type: object
+      required:
+      - platform_post_id
+      - connection
+      title: DeleteRequest
+    DeleteResponse:
+      properties:
+        deleted:
+          type: boolean
+          title: Deleted
+      type: object
+      required:
+      - deleted
+      title: DeleteResponse
+    DestinationConfig:
+      properties:
+        destination_id:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Destination Id
+        name:
+          type: string
+          title: Name
+        url:
+          type: string
+          title: Url
+        platform_key:
+          type: string
+          title: Platform Key
+        surface:
+          type: string
+          title: Surface
+        category:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Category
+        audience_tags:
+          anyOf:
+          - items:
+              type: string
+            type: array
+          - type: 'null'
+          title: Audience Tags
+        language:
+          type: string
+          title: Language
+          default: en
+        geo:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Geo
+          default: global
+        est_audience:
+          anyOf:
+          - type: integer
+          - type: 'null'
+          title: Est Audience
+          default: 0
+        rules_url:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Rules Url
+        frequency_cap:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Frequency Cap
+          default: 1 per 7 days
+        self_promo_allowed:
+          type: boolean
+          title: Self Promo Allowed
+          default: true
+        link_policy:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Link Policy
+          default: allowed
+        disclosure_required:
+          type: boolean
+          title: Disclosure Required
+          default: false
+        automation_allowed:
+          type: boolean
+          title: Automation Allowed
+          default: true
+        connector_key:
+          type: string
+          title: Connector Key
+        relevance_score:
+          anyOf:
+          - type: integer
+          - type: 'null'
+          title: Relevance Score
+          default: 3
+        relevance_reason:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Relevance Reason
+        level:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Level
+          default: L0
+        last_certified_at:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Last Certified At
+        spec_overrides:
+          anyOf:
+          - $ref: '#/components/schemas/SurfaceSpec'
+          - type: 'null'
+      type: object
+      required:
+      - name
+      - url
+      - platform_key
+      - surface
+      - connector_key
+      title: DestinationConfig
+    DestinationCreate:
+      properties:
+        name:
+          type: string
+          title: Name
+        url:
+          type: string
+          title: Url
+        platform_key:
+          type: string
+          title: Platform Key
+        surface:
+          type: string
+          title: Surface
+        category:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Category
+        audience_tags:
+          items:
+            type: string
+          type: array
+          title: Audience Tags
+        language:
+          type: string
+          title: Language
+          default: en
+        geo:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Geo
+          default: global
+        est_audience:
+          anyOf:
+          - type: integer
+          - type: 'null'
+          title: Est Audience
+          default: 0
+        rules_url:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Rules Url
+        frequency_cap:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Frequency Cap
+          default: 1 per 7 days
+        self_promo_allowed:
+          type: boolean
+          title: Self Promo Allowed
+          default: true
+        link_policy:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Link Policy
+          default: allowed
+        disclosure_required:
+          type: boolean
+          title: Disclosure Required
+          default: false
+        automation_allowed:
+          type: boolean
+          title: Automation Allowed
+          default: true
+        connector_key:
+          type: string
+          title: Connector Key
+        relevance_score:
+          anyOf:
+          - type: integer
+          - type: 'null'
+          title: Relevance Score
+          default: 3
+        relevance_reason:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Relevance Reason
+        level:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Level
+          default: L0
+      type: object
+      required:
+      - name
+      - url
+      - platform_key
+      - surface
+      - connector_key
+      title: DestinationCreate
+    DestinationResponse:
+      properties:
+        name:
+          type: string
+          title: Name
+        url:
+          type: string
+          title: Url
+        platform_key:
+          type: string
+          title: Platform Key
+        surface:
+          type: string
+          title: Surface
+        category:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Category
+        audience_tags:
+          items:
+            type: string
+          type: array
+          title: Audience Tags
+        language:
+          type: string
+          title: Language
+          default: en
+        geo:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Geo
+          default: global
+        est_audience:
+          anyOf:
+          - type: integer
+          - type: 'null'
+          title: Est Audience
+          default: 0
+        rules_url:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Rules Url
+        frequency_cap:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Frequency Cap
+          default: 1 per 7 days
+        self_promo_allowed:
+          type: boolean
+          title: Self Promo Allowed
+          default: true
+        link_policy:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Link Policy
+          default: allowed
+        disclosure_required:
+          type: boolean
+          title: Disclosure Required
+          default: false
+        automation_allowed:
+          type: boolean
+          title: Automation Allowed
+          default: true
+        connector_key:
+          type: string
+          title: Connector Key
+        relevance_score:
+          anyOf:
+          - type: integer
+          - type: 'null'
+          title: Relevance Score
+          default: 3
+        relevance_reason:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Relevance Reason
+        level:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Level
+          default: L0
+        id:
+          type: string
+          title: Id
+        last_certified_at:
+          anyOf:
+          - type: string
+            format: date-time
+          - type: 'null'
+          title: Last Certified At
+        created_at:
+          type: string
+          format: date-time
+          title: Created At
+        updated_at:
+          type: string
+          format: date-time
+          title: Updated At
+      type: object
+      required:
+      - name
+      - url
+      - platform_key
+      - surface
+      - connector_key
+      - id
+      - created_at
+      - updated_at
+      title: DestinationResponse
+    FetchMetricsRequest:
+      properties:
+        platform_post_id:
+          type: string
+          title: Platform Post Id
+        connection:
+          $ref: '#/components/schemas/ConnectionAuth'
+        since:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Since
+      type: object
+      required:
+      - platform_post_id
+      - connection
+      title: FetchMetricsRequest
+    FetchMetricsResponse:
+      properties:
+        views:
+          anyOf:
+          - type: integer
+          - type: 'null'
+          title: Views
+          default: 0
+        likes:
+          anyOf:
+          - type: integer
+          - type: 'null'
+          title: Likes
+          default: 0
+        comments:
+          anyOf:
+          - type: integer
+          - type: 'null'
+          title: Comments
+          default: 0
+        shares:
+          anyOf:
+          - type: integer
+          - type: 'null'
+          title: Shares
+          default: 0
+        saves:
+          anyOf:
+          - type: integer
+          - type: 'null'
+          title: Saves
+          default: 0
+        watch_time_s:
+          anyOf:
+          - type: integer
+          - type: 'null'
+          title: Watch Time S
+          default: 0
+        clicks:
+          anyOf:
+          - type: integer
+          - type: 'null'
+          title: Clicks
+          default: 0
+      type: object
+      title: FetchMetricsResponse
+    GetStatusRequest:
+      properties:
+        platform_post_id:
+          type: string
+          title: Platform Post Id
+        connection:
+          $ref: '#/components/schemas/ConnectionAuth'
+      type: object
+      required:
+      - platform_post_id
+      - connection
+      title: GetStatusRequest
+    GetStatusResponse:
+      properties:
+        status:
+          type: string
+          enum:
+          - published
+          - deleted
+          - archived
+          - flagged
+          - not_found
+          title: Status
+        live_url:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Live Url
+      type: object
+      required:
+      - status
+      title: GetStatusResponse
+    HTTPValidationError:
+      properties:
+        detail:
+          items:
+            $ref: '#/components/schemas/ValidationError'
+          type: array
+          title: Detail
+      type: object
+      title: HTTPValidationError
+    HealthResponse:
+      properties:
+        status:
+          type: string
+          title: Status
+        version:
+          type: string
+          title: Version
+          default: 1.0.0
+        environment:
+          type: string
+          title: Environment
+      type: object
+      required:
+      - status
+      - environment
+      title: HealthResponse
+    JobStatusResponse:
+      properties:
+        job_id:
+          type: string
+          title: Job Id
+        status:
+          type: string
+          title: Status
+        progress:
+          type: integer
+          title: Progress
+        job_type:
+          type: string
+          title: Job Type
+        result:
+          anyOf:
+          - type: object
+          - type: 'null'
+          title: Result
+        error:
+          anyOf:
+          - type: object
+          - type: 'null'
+          title: Error
+      type: object
+      required:
+      - job_id
+      - status
+      - progress
+      - job_type
+      title: JobStatusResponse
+    MediaItem:
+      properties:
+        type:
+          type: string
+          enum:
+          - image
+          - video
+          - audio
+          - document
+          title: Type
+        url:
+          type: string
+          title: Url
+        alt_text:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Alt Text
+        thumbnail_url:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Thumbnail Url
+      type: object
+      required:
+      - type
+      - url
+      title: MediaItem
+    PublishRequest:
+      properties:
+        rendition:
+          $ref: '#/components/schemas/ContentRendition'
+        destination:
+          $ref: '#/components/schemas/DestinationConfig'
+        connection:
+          $ref: '#/components/schemas/ConnectionAuth'
+        idempotency_key:
+          type: string
+          title: Idempotency Key
+      type: object
+      required:
+      - rendition
+      - destination
+      - connection
+      - idempotency_key
+      title: PublishRequest
+    PublishResponse:
+      properties:
+        platform_post_id:
+          type: string
+          title: Platform Post Id
+        live_url:
+          type: string
+          title: Live Url
+        status:
+          type: string
+          enum:
+          - published
+          - pending
+          - scheduled
+          - draft
+          title: Status
+          default: published
+      type: object
+      required:
+      - platform_post_id
+      - live_url
+      title: PublishResponse
+    ReadyResponse:
+      properties:
+        status:
+          type: string
+          title: Status
+        checks:
+          type: object
+          title: Checks
+      type: object
+      required:
+      - status
+      - checks
+      title: ReadyResponse
+    RefreshAuthRequest:
+      properties:
+        connection:
+          $ref: '#/components/schemas/ConnectionAuth'
+      type: object
+      required:
+      - connection
+      title: RefreshAuthRequest
+    RefreshAuthResponse:
+      properties:
+        expires_at:
+          type: string
+          title: Expires At
+        access_token:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Access Token
+      type: object
+      required:
+      - expires_at
+      title: RefreshAuthResponse
+    SurfaceSpec:
+      properties:
+        title_max_chars:
+          anyOf:
+          - type: integer
+          - type: 'null'
+          title: Title Max Chars
+        body_max_chars:
+          anyOf:
+          - type: integer
+          - type: 'null'
+          title: Body Max Chars
+        links_allowed:
+          type: boolean
+          title: Links Allowed
+          default: true
+        media_types_allowed:
+          anyOf:
+          - items:
+              type: string
+            type: array
+          - type: 'null'
+          title: Media Types Allowed
+        max_media_count:
+          anyOf:
+          - type: integer
+          - type: 'null'
+          title: Max Media Count
+          default: 10
+        requires_flair:
+          anyOf:
+          - type: boolean
+          - type: 'null'
+          title: Requires Flair
+          default: false
+      type: object
+      title: SurfaceSpec
+    ValidateRequest:
+      properties:
+        rendition:
+          $ref: '#/components/schemas/ContentRendition'
+        destination:
+          $ref: '#/components/schemas/DestinationConfig'
+        connection:
+          anyOf:
+          - $ref: '#/components/schemas/ConnectionAuth'
+          - type: 'null'
+      type: object
+      required:
+      - rendition
+      - destination
+      title: ValidateRequest
+    ValidateResponse:
+      properties:
+        ok:
+          type: boolean
+          title: Ok
+        violations:
+          items:
+            $ref: '#/components/schemas/ViolationItem'
+          type: array
+          title: Violations
+      type: object
+      required:
+      - ok
+      title: ValidateResponse
+    ValidationError:
+      properties:
+        loc:
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+          type: array
+          title: Location
+        msg:
+          type: string
+          title: Message
+        type:
+          type: string
+          title: Error Type
+      type: object
+      required:
+      - loc
+      - msg
+      - type
+      title: ValidationError
+    ViolationItem:
+      properties:
+        field:
+          type: string
+          title: Field
+        message:
+          type: string
+          title: Message
+        rule:
+          type: string
+          title: Rule
+        severity:
+          type: string
+          enum:
+          - error
+          - warning
+          title: Severity
+          default: error
+      type: object
+      required:
+      - field
+      - message
+      - rule
+      title: ViolationItem
